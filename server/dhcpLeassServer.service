@@ -1,0 +1,15 @@
+[Unit]
+Description=dhcpleaseServer 
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory=/var/www/dhcp_api
+RestartSec=10
+User=root
+ExecStart=/bin/python3 app.py
+ExecStop=pkill -9 app.py
+
+[Install]
+WantedBy=multi-user.target

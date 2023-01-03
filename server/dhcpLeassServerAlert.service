@@ -1,0 +1,15 @@
+[Unit]
+Description=dhcpleaseServerAlert
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory=/var/www/dhcp_api
+RestartSec=600
+User=root
+ExecStart=/bin/python3 alery.py
+ExecStop=pkill -9 alery.py
+
+[Install]
+WantedBy=multi-user.target

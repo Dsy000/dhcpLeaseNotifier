@@ -1,0 +1,14 @@
+[Unit]
+Description=dhcpleaseAgent
+After=network.target
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory=/var/lib/dhcpleaseAgent/
+RestartSec=10
+User=root
+ExecStart=/bin/bash /var/lib/dhcpleaseAgent/dhcpleaseAgent.sh > /dev/null
+ExecStop=/bin/pkill -9 dhcpleaseAgent.sh
+
+[Install]
+WantedBy=multi-user.target
