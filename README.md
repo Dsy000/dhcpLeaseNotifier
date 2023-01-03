@@ -22,6 +22,10 @@ pip install requests
 pip install sqlite3
 pip install bleach
 pip install json
+
+wget  https://update_in_future_link
+git clone <URL> 
+sudo ./install.sh
 ```
 
 
@@ -29,5 +33,6 @@ pip install json
 
 ```sh
 wget  https://update_in_future_link
+git clone <URL> 
 sudo ./install.sh
 ```
